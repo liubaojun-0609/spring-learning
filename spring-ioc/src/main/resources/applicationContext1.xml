@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="studentService" class="com.liubj.service.impl.StudentServiceImpl">
+        <property name="stringList">
+            <list>
+                <value>123</value>
+                <value>456</value>
+                <value>789</value>
+            </list>
+        </property>
+        <property name="studentDaoList">
+            <list>
+                <ref bean="studentDao1"></ref>
+                <ref bean="studentDao2"></ref>
+                <ref bean="studentDao3"></ref>
+            </list>
+        </property>
+        <property name="studentDaoMap">
+            <map>
+                <entry key="m1" value-ref="studentDao1"></entry>
+                <entry key="m2" value-ref="studentDao2"></entry>
+                <entry key="m3" value-ref="studentDao3"></entry>
+            </map>
+        </property>
+        <property name="studentDaoSet">
+            <set>
+                <ref bean="studentDao1"></ref>
+                <ref bean="studentDao2"></ref>
+                <ref bean="studentDao3"></ref>
+            </set>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="p1">pp1</prop>
+                <prop key="p2">pp2</prop>
+                <prop key="p3">pp3</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="studentDao1" class="com.liubj.dao.imp.StudentDaoImpl"></bean>
+    <bean id="studentDao2" class="com.liubj.dao.imp.StudentDaoImpl"></bean>
+    <bean id="studentDao3" class="com.liubj.dao.imp.StudentDaoImpl"></bean>
+</beans>

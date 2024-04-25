@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userService" name="aaa" class="com.liubj.service.impl.UserServiceImpl" scope="singleton" init-method="init" destroy-method="destroy">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+
+    <bean id="userDao" name="bbb" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+
+    <!--静态工厂创建bean对象-->
+    <bean id="userDao1" class="com.liubj.factory.MyBeanFactory1" factory-method="userDao"></bean>
+    <!--实例工厂创建bean对象-->
+    <bean id="myBeanFactory2" class="com.liubj.factory.MyBeanFactory2"></bean>
+    <bean id="userDao2" factory-bean="myBeanFactory2" factory-method="userDao"></bean>
+
+    <!--FactoryBean 创建bean对象-->
+    <bean id="userDao3" class="com.liubj.factory.MyBeanFactory3"></bean>
+</beans>
