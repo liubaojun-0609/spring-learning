@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="applicationContext-user.xml"></import>
     <bean id="userService" name="aaa" class="com.liubj.service.impl.UserServiceImpl" scope="singleton" init-method="init" destroy-method="destroy">
         <property name="userDao" ref="userDao"></property>
     </bean>
@@ -17,4 +18,13 @@
 
     <!--FactoryBean 创建bean对象-->
     <bean id="userDao3" class="com.liubj.factory.MyBeanFactory3"></bean>
+
+    <!-- beans  设置不同环境中加载的bean   -->
+    <beans profile="dev">
+        <bean id="userDaoDev" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+    </beans>
+
+    <beans profile="prod">
+        <bean id="userDaoProd" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+    </beans>
 </beans>

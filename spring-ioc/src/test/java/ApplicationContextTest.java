@@ -48,4 +48,34 @@ public class ApplicationContextTest {
         studentService.printMessage();
     }
 
+    @Test
+    public void test06(){
+        //配置环境变量
+        System.setProperty("spring.profiles.active","dev");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = (UserService) applicationContext.getBean("userService");
+        UserDao userDaoDev = (UserDao) applicationContext.getBean("userDaoDev");
+        System.out.println(userService);
+        System.out.println(userDaoDev);
+    }
+
+    @Test
+    public void test07(){
+        System.setProperty("spring.profiles.active","prod");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = (UserService) applicationContext.getBean("userService");
+        UserDao userDaoProd = (UserDao) applicationContext.getBean("userDaoProd");
+        System.out.println(userService);
+        System.out.println(userDaoProd);
+    }
+
+    @Test
+    public void test08(){
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserDao userDao = (UserDao) applicationContext.getBean("userDao-user");
+        UserDao xxxUserDao = (UserDao) applicationContext.getBean("xxxUserDao");
+        System.out.println(userDao);
+        System.out.println(xxxUserDao);
+    }
+
 }
