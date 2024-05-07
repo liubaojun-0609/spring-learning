@@ -19,4 +19,14 @@
     <bean id="clazz" class="java.lang.Class" factory-method="forName">
         <constructor-arg name="className" value="com.liubj.dao.UserDao"></constructor-arg>
     </bean>
+
+    <bean id="inputStream" class="org.apache.ibatis.io.Resources" factory-method="getResourceAsStream">
+        <constructor-arg name="resource" value="mybatis-config.xml"></constructor-arg>
+    </bean>
+
+    <bean id="sqlSessionFactoryBuilder" class="org.apache.ibatis.session.SqlSessionFactoryBuilder"></bean>
+
+    <bean id="sqlSessionFactory" factory-bean="sqlSessionFactoryBuilder" factory-method="build">
+        <constructor-arg name="inputStream" ref="inputStream"></constructor-arg>
+    </bean>
 </beans>
