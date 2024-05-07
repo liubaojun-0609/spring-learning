@@ -18,4 +18,14 @@ public class BeanTest {
         System.out.println(username);
         System.out.println(password);
     }
+
+    @Test
+    public void test02() throws ClassNotFoundException {
+        Class<?> aClass = Class.forName("com.liubj.dao.UserDao");
+        System.out.println(aClass);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        Object clazz = applicationContext.getBean("clazz");
+        System.out.println(clazz);
+
+    }
 }

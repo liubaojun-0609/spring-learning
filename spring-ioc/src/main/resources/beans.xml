@@ -15,4 +15,8 @@
         <property name="username" value="root"></property>
         <property name="password" value="123456"></property>
     </bean>
+
+    <bean id="clazz" class="java.lang.Class" factory-method="forName">
+        <constructor-arg name="className" value="com.liubj.dao.UserDao"></constructor-arg>
+    </bean>
 </beans>
