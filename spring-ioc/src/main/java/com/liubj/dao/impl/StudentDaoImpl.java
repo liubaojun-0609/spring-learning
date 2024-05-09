@@ -1,4 +1,4 @@
-package com.liubj.dao.imp;
+package com.liubj.dao.impl;
 
 import com.liubj.dao.StudentDao;
 

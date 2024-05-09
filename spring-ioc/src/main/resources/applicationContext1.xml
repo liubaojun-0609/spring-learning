@@ -41,7 +41,7 @@
         </property>
     </bean>
 
-    <bean id="studentDao1" class="com.liubj.dao.imp.StudentDaoImpl"></bean>
-    <bean id="studentDao2" class="com.liubj.dao.imp.StudentDaoImpl"></bean>
-    <bean id="studentDao3" class="com.liubj.dao.imp.StudentDaoImpl"></bean>
+    <bean id="studentDao1" class="com.liubj.dao.impl.StudentDaoImpl"></bean>
+    <bean id="studentDao2" class="com.liubj.dao.impl.StudentDaoImpl"></bean>
+    <bean id="studentDao3" class="com.liubj.dao.impl.StudentDaoImpl"></bean>
 </beans>

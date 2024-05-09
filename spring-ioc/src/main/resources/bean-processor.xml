@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userDao-user" class="com.liubj.dao.impl.UserDaoImpl"></bean>
-
-    <alias name="userDao-user" alias="xxxUserDao"></alias>
+    <bean class="com.liubj.processor.MyBeanFactoryPostProcessor"></bean>
+    <bean class="com.liubj.processor.MyBeanDefinitionRegistryPostProcessor"></bean>
 </beans>

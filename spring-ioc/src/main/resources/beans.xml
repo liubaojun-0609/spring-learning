@@ -7,7 +7,7 @@
         <property name="userDao" ref="userDao"></property>
     </bean>
 
-    <bean id="userDao" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+    <bean id="userDao" class="com.liubj.dao.impl.UserDaoImpl"></bean>
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>

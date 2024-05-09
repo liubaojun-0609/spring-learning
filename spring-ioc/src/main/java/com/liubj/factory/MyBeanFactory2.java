@@ -1,7 +1,7 @@
 package com.liubj.factory;
 
 import com.liubj.dao.UserDao;
-import com.liubj.dao.imp.UserDaoImpl;
+import com.liubj.dao.impl.UserDaoImpl;
 
 public class MyBeanFactory2 {
 

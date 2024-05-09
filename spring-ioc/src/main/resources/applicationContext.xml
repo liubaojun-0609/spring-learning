@@ -8,7 +8,7 @@
         <property name="userDao" ref="userDao"></property>
     </bean>
 
-    <bean id="userDao" name="bbb" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+    <bean id="userDao" name="bbb" class="com.liubj.dao.impl.UserDaoImpl"></bean>
 
     <!--静态工厂创建bean对象-->
     <bean id="userDao1" class="com.liubj.factory.MyBeanFactory1" factory-method="userDao"></bean>
@@ -21,10 +21,10 @@
 
     <!-- beans  设置不同环境中加载的bean   -->
     <beans profile="dev">
-        <bean id="userDaoDev" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+        <bean id="userDaoDev" class="com.liubj.dao.impl.UserDaoImpl"></bean>
     </beans>
 
     <beans profile="prod">
-        <bean id="userDaoProd" class="com.liubj.dao.imp.UserDaoImpl"></bean>
+        <bean id="userDaoProd" class="com.liubj.dao.impl.UserDaoImpl"></bean>
     </beans>
 </beans>

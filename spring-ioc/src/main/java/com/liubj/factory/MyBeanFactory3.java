@@ -1,8 +1,7 @@
 package com.liubj.factory;
 
 import com.liubj.dao.UserDao;
-import com.liubj.dao.imp.UserDaoImpl;
-import org.springframework.beans.factory.BeanFactory;
+import com.liubj.dao.impl.UserDaoImpl;
 import org.springframework.beans.factory.FactoryBean;
 
 public class MyBeanFactory3 implements FactoryBean<UserDao> {
