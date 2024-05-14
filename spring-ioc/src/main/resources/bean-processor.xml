@@ -5,4 +5,5 @@
 
     <bean class="com.liubj.processor.MyBeanFactoryPostProcessor"></bean>
     <bean class="com.liubj.processor.MyBeanDefinitionRegistryPostProcessor"></bean>
+    <bean class="com.liubj.processor.MyComponentBeanFactoryPostProcessor"></bean>
 </beans>
